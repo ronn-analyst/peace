@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Grammar Quiz</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+    }
+    #quiz-container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: #ffffff;
+        padding: 25px 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #1a237e;
+        margin-bottom: 30px;
+    }
+    .question {
+        margin-bottom: 28px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .question:last-of-type {
+        border-bottom: none;
+    }
+    .question p {
+        font-size: 1.1em;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    .options label {
+        display: block;
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+    }
+    .options label:hover {
+        background-color: #e9eafc;
+        border-color: #3f51b5;
+    }
+    input[type="radio"] {
+        margin-right: 12px;
+        transform: translateY(1px);
+    }
+    #submit-btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        font-size: 1.25em;
+        font-weight: bold;
+        color: #fff;
+        background: linear-gradient(45deg, #3f51b5, #1a237e);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background 0.3s;
+    }
+    #submit-btn:hover {
+        background: linear-gradient(45deg, #1a237e, #3f51b5);
+    }
+    #results {
+        margin-top: 30px;
+    }
+    #score-container {
+        text-align: center;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #e8eaf6;
+        border: 2px solid #3f51b5;
+        margin-bottom: 20px;
+    }
+    #score-container h2 {
+        margin: 0;
+        color: #1a237e;
+    }
+    .feedback.incorrect {
+        background-color: #ffebee;
+        border-left: 5px solid #c62828;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 0 5px 5px 0;
+        color: #c62828;
+    }
+    .feedback.incorrect strong {
+        color: #b71c1c;
+    }
+    .error-analysis-question u {
+        font-weight: bold;
+        text-decoration: none;
+        border-bottom: 1px solid #555;
+    }
+</style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <h1>Advanced Grammar Quiz</h1>
+    <form id="quiz-form">
+        <!-- Multiple Choice Questions -->
+        <div class="question">
+            <p>1. The coach had the team __________ an extra hour after the poor performance.</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> A) to practice</label>
+                <label><input type="radio" name="q1" value="b"> B) practiced</label>
+                <label><input type="radio" name="q1" value="c"> C) practicing</label>
+                <label><input type="radio" name="q1" value="d"> D) practice</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. I will finish this report __________ the manager gets back from his lunch break.</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> A) before</label>
+                <label><input type="radio" name="q2" value="b"> B) until</label>
+                <label><input type="radio" name="q2" value="c"> C) while</label>
+                <label><input type="radio" name="q2" value="d"> D) since</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>3. He told me, "I will be there tomorrow." He told me that he would be there __________.</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> A) tomorrow</label>
+                <label><input type="radio" name="q3" value="b"> B) the next day</label>
+                <label><input type="radio" name="q3" value="c"> C) yesterday</label>
+                <label><input type="radio" name="q3" value="d"> D) that day</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>4. You __________ bring a gift, but a card would be appreciated.</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> A) must not</label>
+                <label><input type="radio" name="q4" value="b"> B) don't have to</label>
+                <label><input type="radio" name="q4" value="c"> C) couldn't</label>
+                <label><input type="radio" name="q4" value="d"> D) shouldn't have</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>5. My sister hasn't finished her project, and __________ have I.</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> A) so</label>
+                <label><input type="radio" name="q5" value="b"> B) either</label>
+                <label><input type="radio" name="q5" value="c"> C) neither</label>
+                <label><input type="radio" name="q5" value="d"> D) too</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>6. __________ I check my emails, I like to have a cup of coffee.</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> A) As soon as</label>
+                <label><input type="radio" name="q6" value="b"> B) Until</label>
+                <label><input type="radio" name="q6" value="c"> C) While</label>
+                <label><input type="radio" name="q6" value="d"> D) Since</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>7. I got my friend __________ me with my presentation.</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> A) help</label>
+                <label><input type="radio" name="q7" value="b"> B) helped</label>
+                <label><input type="radio" name="q7" value="c"> C) helping</label>
+                <label><input type="radio" name="q7" value="d"> D) to help</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>8. "Where did you go?" she asked. She asked me where __________.</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> A) did I go</label>
+                <label><input type="radio" name="q8" value="b"> B) I had gone</label>
+                <label><input type="radio" name="q8" value="c"> C) I did go</label>
+                <label><input type="radio" name="q8" value="d"> D) had I gone</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>9. The lights are on, so they __________ be home now.</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> A) must</label>
+                <label><input type="radio" name="q9" value="b"> B) might not</label>
+                <label><input type="radio" name="q9" value="c"> C) can't</label>
+                <label><input type="radio" name="q9" value="d"> D) should</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>10. She enjoys hiking, and __________ her husband.</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> A) so does</label>
+                <label><input type="radio" name="q10" value="b"> B) so is</label>
+                <label><input type="radio" name="q10" value="c"> C) neither does</label>
+                <label><input type="radio" name="q10" value="d"> D) does too</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>11. The teacher let the students __________ early after the exam.</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> A) to leave</label>
+                <label><input type="radio" name="q11" value="b"> B) leaving</label>
+                <label><input type="radio" name="q11" value="c"> C) leave</label>
+                <label><input type="radio" name="q11" value="d"> D) left</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>12. He asked, "Can you help me?" He asked me __________ him.</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> A) if I can help</label>
+                <label><input type="radio" name="q12" value="b"> B) that I could help</label>
+                <label><input type="radio" name="q12" value="c"> C) whether I could help</label>
+                <label><input type="radio" name="q12" value="d"> D) can I help</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>13. You __________ have seen him; he's been out of the country for a month.</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> A) must</label>
+                <label><input type="radio" name="q13" value="b"> B) should</label>
+                <label><input type="radio" name="q13" value="c"> C) couldn't</label>
+                <label><input type="radio" name="q13" value="d"> D) might</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>14. I worked in that company, and __________ my best friend.</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> A) so did</label>
+                <label><input type="radio" name="q14" value="b"> B) so was</label>
+                <label><input type="radio" name="q14" value="c"> C) either did</label>
+                <label><input type="radio" name="q14" value="d"> D) also did</label>
+            </div>
+        </div>
+        
+        <div class="question">
+            <p>15. The alarm will ring __________ someone opens the door.</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> A) while</label>
+                <label><input type="radio" name="q15" value="b"> B) since</label>
+                <label><input type="radio" name="q15" value="c"> C) as soon as</label>
+                <label><input type="radio" name="q15" value="d"> D) until</label>
+            </div>
+        </div>
+
+        <!-- Error Analysis Questions -->
+        <div class="question error-analysis-question">
+            <p>16. My boss told me <u>that</u> (A) I <u>must to finish</u> (B) the report <u>by the end of</u> (C) the day, no <u>exceptions</u> (D).</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> A) that</label>
+                <label><input type="radio" name="q16" value="b"> B) must to finish</label>
+                <label><input type="radio" name="q16" value="c"> C) by the end of</label>
+                <label><input type="radio" name="q16" value="d"> D) exceptions</label>
+            </div>
+        </div>
+
+        <div class="question error-analysis-question">
+            <p>17. After she <u>will graduate</u> (A) from university, she <u>plans</u> (B) to travel around Europe <u>for</u> (C) a few <u>months</u> (D).</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> A) will graduate</label>
+                <label><input type="radio" name="q17" value="b"> B) plans</label>
+                <label><input type="radio" name="q17" value="c"> C) for</label>
+                <label><input type="radio" name="q17" value="d"> D) months</label>
+            </div>
+        </div>
+
+        <div class="question error-analysis-question">
+            <p>18. They wanted to know <u>where was the meeting</u> (A), so I <u>sent</u> (B) them the address and a map <u>to the</u> (C) convention <u>center</u> (D).</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> A) where was the meeting</label>
+                <label><input type="radio" name="q18" value="b"> B) sent</label>
+                <label><input type="radio" name="q18" value="c"> C) to the</label>
+                <label><input type="radio" name="q18" value="d"> D) center</label>
+            </div>
+        </div>
+
+        <div class="question error-analysis-question">
+            <p>19. My parents made me <u>to clean</u> (A) my room before they <u>would let</u> (B) me go out with my friends <u>for the</u> (C) evening (D).</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> A) to clean</label>
+                <label><input type="radio" name="q19" value="b"> B) would let</label>
+                <label><input type="radio" name="q19" value="c"> C) for the</label>
+                <label><input type="radio" name="q19" value="d"> D) evening</label>
+            </div>
+        </div>
+
+        <div class="question error-analysis-question">
+            <p>20. Maria can't speak German, and <u>neither can't her brother</u> (A), so they decided <u>to take</u> (B) a beginner's course <u>together</u> (C) this <u>summer</u> (D).</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> A) neither can't her brother</label>
+                <label><input type="radio" name="q20" value="b"> B) to take</label>
+                <label><input type="radio" name="q20" value="c"> C) together</label>
+                <label><input type="radio" name="q20" value="d"> D) summer</label>
+            </div>
+        </div>
+
+        <div class="question error-analysis-question">
+            <p>21. He said that he <u>couldn't come</u> (A) to the party the <u>next day</u> (B) because he <u>will have</u> (C) a prior commitment with <u>his family</u> (D).</p>
+            <div class="options">
+                <label><input type="radio" name="q21" value="a"> A) couldn't come</label>
+                <label><input type="radio" name="q21" value="b"> B) next day</label>
+                <label><input type="radio" name="q21" value="c"> C) will have</label>
+                <label><input type="radio" name="q21" value="d"> D) his family</label>
+            </div>
+        </div>
+        
+        <div class="question error-analysis-question">
+            <p>22. You had better <u>to not be</u> (A) late for the interview; it's very important <u>for</u> (B) your career, and first impressions <u>really matter</u> (C) <u>to them</u> (D).</p>
+            <div class="options">
+                <label><input type="radio" name="q22" value="a"> A) to not be</label>
+                <label><input type="radio" name="q22" value="b"> B) for</label>
+                <label><input type="radio" name="q22" value="c"> C) really matter</label>
+                <label><input type="radio" name="q22" value="d"> D) to them</label>
+            </div>
+        </div>
+
+        <div class="question error-analysis-question">
+            <p>23. I am getting my car <u>serviced</u> (A) tomorrow because I don't know how <u>to do</u> (B) it, and my brother doesn't know how <u>to do it</u> (C), <u>too</u> (D).</p>
+            <div class="options">
+                <label><input type="radio" name="q23" value="a"> A) serviced</label>
+                <label><input type="radio" name="q23" value="b"> B) to do</label>
+                <label><input type="radio" name="q23" value="c"> C) to do it</label>
+                <label><input type="radio" name="q23" value="d"> D) too</label>
+            </div>
+        </div>
+        
+        <div class="question error-analysis-question">
+            <p>24. The consultant advised us <u>that</u> (A) the market trends <u>might to change</u> (B) unexpectedly and that we <u>should be prepared</u> (C) for various <u>scenarios</u> (D).</p>
+            <div class="options">
+                <label><input type="radio" name="q24" value="a"> A) that</label>
+                <label><input type="radio" name="q24" value="b"> B) might to change</label>
+                <label><input type="radio" name="q24" value="c"> C) should be prepared</label>
+                <label><input type="radio" name="q24" value="d"> D) scenarios</label>
+            </div>
+        </div>
+        
+        <div class="question error-analysis-question">
+            <p>25. I was studying for my exam <u>while</u> (A) the power went out, <u>so</u> (B) I couldn't be able <u>to study</u> (C) <u>anymore</u> (D).</p>
+            <div class="options">
+                <label><input type="radio" name="q25" value="a"> A) while</label>
+                <label><input type="radio" name="q25" value="b"> B) so</label>
+                <label><input type="radio" name="q25" value="c"> C) to study</label>
+                <label><input type="radio" name="q25" value="d"> D) anymore</label>
+            </div>
+        </div>
+        
+        <button type="button" id="submit-btn">Show My Score</button>
+    </form>
+    <div id="results"></div>
+</div>
+
+<script>
+document.getElementById('submit-btn').addEventListener('click', function() {
+    const answers = {
+        q1: 'd', q2: 'a', q3: 'b', q4: 'b', q5: 'c',
+        q6: 'c', q7: 'd', q8: 'b', q9: 'a', q10: 'a',
+        q11: 'c', q12: 'c', q13: 'c', q14: 'a', q15: 'c',
+        q16: 'b', q17: 'a', q18: 'a', q19: 'a', q20: 'a',
+        q21: 'c', q22: 'a', q23: 'd', q24: 'b', q25: 'a'
+    };
+
+    const explanations = {
+        q1: "The causative verb 'have' (had) is followed by a base verb (infinitive without 'to') in the active voice: had the team practice.",
+        q2: "'Before' is the correct conjunction to show that the first action (finishing the report) will be completed prior to the second action (the manager gets back).",
+        q3: "In reported speech, 'tomorrow' changes to 'the next day' or 'the following day'.",
+        q4: "'Don't have to' correctly expresses a lack of obligation, while 'must not' means it is forbidden.",
+        q5: "'Neither' is used to agree with a negative statement. The structure is 'neither + auxiliary + subject'.",
+        q6: "'While' is used to show two actions happening at the same time.",
+        q7: "The causative verb 'get' is followed by an object and an infinitive with 'to': got my friend to help.",
+        q8: "In indirect questions, the word order changes to subject + verb. The tense also shifts back, so 'did go' (simple past) becomes 'had gone' (past perfect).",
+        q9: "'Must' is used for strong logical deduction. Since the lights are on, it's a strong conclusion they are home.",
+        q10: "'So does' is the correct elliptical structure to agree with a positive statement using a simple present verb.",
+        q11: "The causative verb 'let' is followed by a base verb (infinitive without 'to'): let the students leave.",
+        q12: "For yes/no questions in reported speech, use 'if' or 'whether', change the word order to subject + verb, and backshift the tense ('can' becomes 'could').",
+        q13: "'Couldn't' is used for logical impossibility in the past. If he was abroad, it's impossible that you saw him.",
+        q14: "'So did' is the correct structure to show agreement with a past simple action.",
+        q15: "'As soon as' correctly indicates that the alarm will ring immediately after the door is opened.",
+        q16: "Modal verbs like 'must' are followed by the base form of the verb without 'to'. The correct form is 'must finish'.",
+        q17: "In a future time clause (beginning with 'after'), use the simple present ('graduates') to refer to a future event, not the future tense ('will graduate').",
+        q18: "In an indirect question, the word order must be subject + verb. The correct structure is 'where the meeting was'.",
+        q19: "The causative verb 'make' is followed by the base form of the verb without 'to'. The correct form is 'made me clean'.",
+        q20: "'Neither' is already negative, so it must be followed by a positive verb. The correct form is 'neither can her brother'.",
+        q21: "When reporting a past statement, 'will' in the original speech becomes 'would' in the reported speech. The correct form is 'would have'.",
+        q22: "'Had better' is a modal expression followed by the base form of the verb. The negative is 'had better not be'.",
+        q23: "'Either' is used to show agreement in a negative statement, not 'too'. The sentence should end with '...and my brother doesn't know how, either'.",
+        q24: "Modal verbs like 'might' are followed by the base form of the verb without 'to'. The correct form is 'might change'.",
+        q25: "'While' is used for two actions happening simultaneously over a period. 'When' is used when one action interrupts another. The correct word is 'when the power went out'."
+    };
+
+    const form = document.getElementById('quiz-form');
+    const resultsContainer = document.getElementById('results');
+    resultsContainer.innerHTML = '';
+    let score = 0;
+    let feedbackHtml = '';
+
+    for (let i = 1; i <= 25; i++) {
+        const questionName = 'q' + i;
+        const selectedOption = form.elements[questionName].value;
+
+        if (selectedOption === answers[questionName]) {
+            score++;
+        } else {
+            const questionText = document.querySelector(`input[name="${questionName}"]`).closest('.question').querySelector('p').innerHTML;
+            const selectedAnswerText = selectedOption ? form.querySelector(`input[name="${questionName}"][value="${selectedOption}"]`).parentElement.innerText.substring(3) : "No Answer";
+            const correctAnswerText = form.querySelector(`input[name="${questionName}"][value="${answers[questionName]}"]`).parentElement.innerText.substring(3);
+            
+            feedbackHtml += `
+                <div class="feedback incorrect">
+                    <p style="margin:0; font-weight:bold;">Question ${i}: ${questionText}</p>
+                    <p style="margin:5px 0 0 0;">Your answer "${selectedAnswerText}" was incorrect.</p>
+                    <p style="margin:5px 0 0 0;">The correct answer is "<strong>${correctAnswerText}</strong>".</p>
+                    <p style="margin:5px 0 0 0;"><em><strong>Reason:</strong> ${explanations[questionName]}</em></p>
+                </div>
+            `;
+        }
+    }
+
+    const scoreDiv = `
+        <div id="score-container">
+            <h2>Your final score is: ${score} out of 25</h2>
+        </div>
+    `;
+
+    resultsContainer.innerHTML = scoreDiv + feedbackHtml;
+    resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+</script>
+
+</body>
+</html>
